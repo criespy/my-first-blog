@@ -6,15 +6,12 @@
   <div>
     <h1><a href="">Django - DJ Ango [dije ango]</a></h1>
   </div>
+  {% for post in posts %}
   <div>
-    <p>Published: 26 Mei 2016, 08:17</p>
-    <p><h2><a href="">Judul postingan pertama ada disini</a></h2></p>
-    <p>Ini isinya daripada postingan pertama, kalimatnya pendek, tidak panjang, padat, dan jelas. Jelas - jelas ngawur.</p>
+    <p>published: {{ post.published_date }}</p>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text|linebreaks }}</p>
   </div>
-  <div>
-    <p>Published: 26 Mei 2016, 08:17</p>
-    <p><h2><a href="">Judul postingan kedua ada disini</a></h2></p>
-    <p>Ini isinya daripada postingan kedua, kalimatnya pendek, tidak panjang, padat, dan jelas. Jelas - jelas makin ngawur.</p>
-  </div>
+  {% endfor %}
 </body>
 </html>
